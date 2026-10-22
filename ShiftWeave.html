@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ShiftWeave — make the gaps visible</title><meta name="description" content="An explainable volunteer roster planner with availability, roles, rest gaps and workload limits. Local processing."><style>:root{font-family:system-ui,sans-serif;color:#25394a;background:#f3f3ee;--blue:#204f69;--line:#d6ddd9}*{box-sizing:border-box}body{margin:0}header,main,footer{max-width:1280px;margin:auto}header{padding:26px 32px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:center}header span{font-size:10px;letter-spacing:2px}.brand{font-size:23px;font-weight:750;text-decoration:none;color:var(--blue);letter-spacing:-1px}main{padding:0 32px}.hero{padding:55px 0 40px;display:grid;grid-template-columns:2fr 1fr;gap:70px;align-items:center}.eyebrow{font-size:11px;letter-spacing:2px;color:#577061}h1{font:400 clamp(40px,5vw,65px)/1.08 Georgia,serif;letter-spacing:-2px;margin:20px 0}.lead{max-width:620px;font-size:17px;color:#61727b;line-height:1.65}.buttons{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 10px}button,.button{font:600 12px system-ui;padding:11px 15px;border:1px solid #a8b8bd;background:white;color:var(--blue);border-radius:6px;cursor:pointer;display:inline-flex;align-items:center}.primary{background:var(--blue);color:white;border-color:var(--blue)}button:disabled{opacity:.4;cursor:not-allowed}button:hover,.button:hover{filter:brightness(.94)}button:focus-visible,input:focus-visible,a:focus-visible,.button:focus-within,.tablewrap:focus-visible{outline:3px solid #c58830;outline-offset:3px}.micro{font-size:11px;color:#657780;line-height:1.65}aside{background:#dce4d9;padding:26px 30px;border-radius:4px;transform:rotate(2deg)}.pill{font-size:9px;letter-spacing:1.5px}.poster{font:43px/1.06 Georgia,serif;margin:24px 0;color:#284f49}aside p{font-size:12px;line-height:1.6}#message{font-size:13px;padding:10px 0;color:#516c6d}.error{color:#9d3029!important}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:20px}.toolbar label{font-size:13px}.toolbar input{width:65px}.columns{display:grid;grid-template-columns:1fr 1fr;gap:20px}.panel{background:#fffefa;border:1px solid var(--line);border-radius:10px;padding:24px}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:15px}h2{font-size:16px;margin:0}h3{font-size:14px}.panel>p,.sectionhead p{font-size:12px;color:#657780;line-height:1.6}.entry{border-top:1px solid var(--line);padding:18px 0 10px}.entryhead{display:flex;gap:12px;align-items:center;justify-content:space-between}.entryhead strong{font-size:12px;color:#6b7c80}.entryhead button{padding:5px 9px;font-size:10px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}.fields label{display:flex;flex-direction:column;gap:6px;font-size:11px;color:#526773}input:not([type=checkbox]):not([type=file]){font:13px system-ui;padding:9px;border:1px solid #c7d0ce;border-radius:4px;min-width:0;background:white;color:#25394a}.availability{border:0;padding:0;margin:15px 0}.availability legend{font-size:11px;margin-bottom:8px}.availability label{display:block;font-size:11px;margin:7px 0;line-height:1.5}input[type=checkbox]{accent-color:var(--blue)}input[type=file]{position:absolute;width:1px;height:1px;opacity:0}.plan{margin-top:20px}#outcome{margin:22px 0 15px;padding:17px;background:#e3ecdf;border-radius:7px;line-height:1.6;font-size:13px}#outcome.warn{background:#fff0d4}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:6px}table{width:100%;border-collapse:collapse;font-size:12px}td,th{text-align:left;padding:12px;border-bottom:1px solid var(--line);white-space:nowrap}th{background:#eaf0e9;font-size:11px}.gap{color:#a45823;font-weight:700}.loads{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.load{padding:14px;background:#edf0e8;font-size:12px;border-radius:5px}.load span{display:block;color:#657780;font-size:11px;margin-top:7px}.approval{font-size:12px;display:block;line-height:1.5;margin-top:20px}.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin:35px 0}.principles p{font-size:12px;line-height:1.6;color:#657780}footer{padding:26px 32px;border-top:1px solid var(--line);font-size:10px;color:#647579;display:flex;justify-content:space-between;gap:20px}[hidden]{display:none!important}@media(max-width:850px){.columns{grid-template-columns:1fr}.hero{gap:30px}.poster{font-size:34px}.sectionhead{flex-wrap:wrap}}@media(max-width:550px){main{padding:0 16px}header{padding:22px 16px}header span{display:none}.hero{grid-template-columns:1fr;padding-top:30px}aside{display:none}.principles{grid-template-columns:1fr;gap:8px}.toolbar{align-items:flex-start;flex-direction:column}.panel{padding:18px}.fields{gap:8px}footer{flex-direction:column}.sectionhead h2{line-height:1.6}}@media print{header,.hero,#message,.toolbar,.columns,.principles,.approval,.buttons,.sectionhead button{display:none!important}.plan{border:0;padding:0}body{background:white}main{padding:0}footer{font-size:9px}}
+.columns>.panel,.fields label{min-width:0}.fields{grid-template-columns:repeat(2,minmax(0,1fr))}
+</style></head><body><header><a href="#" class="brand">▥ ShiftWeave</a><span>THE SMALL-EVENT ROSTER DESK</span></header><main><section class="hero"><div><p class="eyebrow">GOOD PLANS RESPECT PEOPLE.</p><h1>Cover the shift.<br>Keep the boundaries.</h1><p class="lead">A volunteer roster that respects availability, role skills and workload limits. When the plan doesn’t fit, see the gap before event day.</p><div class="buttons"><button id="sample" class="primary">Explore a sample</button><button id="new">Start fresh</button><label class="button">Import JSON<input id="file" type="file" accept=".json,application/json"></label></div><p class="micro">No sign-in. No uploads. No saved browser data. Synthetic sample names.</p></div><aside><span class="pill">CHECK BEFORE YOU COMMIT</span><div class="poster">People<br>≠<br>empty slots.</div><p>Availability is a constraint.<br>Fairness is a conversation.</p></aside></section><p id="message" role="status" aria-live="polite">Explore the sample or start your own single-day plan.</p><section id="editor" hidden><div class="toolbar"><label>Minimum gap between duties <input id="rest" type="number" min="0" max="180" value="15"> minutes</label><button id="saveinput">Export inputs</button></div><div class="columns"><section class="panel"><div class="sectionhead"><h2>01 / The duties</h2><button id="addshift">+ Duty</button></div><p>Same-day, 24-hour times. One role per duty; add places for parallel coverage.</p><div id="shifts"></div></section><section class="panel"><div class="sectionhead"><h2>02 / The volunteers</h2><button id="addperson">+ Volunteer</button></div><p>Use initials or pseudonyms. Tick only duties each person has agreed to cover.</p><div id="people"></div></section></div><section class="panel plan"><div class="sectionhead"><div><h2>03 / Check the fit</h2><p>Up to16volunteers,12duties and24places. Bounded backtracking, independently checked before export.</p></div><button id="solve" class="primary">Build roster</button></div><div id="result" hidden><div id="outcome"></div><div id="schedule" class="tablewrap" tabindex="0" aria-label="Roster preview"></div><h3>Workload at a glance</h3><div id="loads" class="loads"></div><p id="limits" class="micro"></p><label class="approval"><input id="approve" type="checkbox"> I reviewed this roster and will confirm arrangements with volunteers.</label><div class="buttons"><button id="export" disabled>Download reviewed roster</button><button id="print" disabled>Print review</button></div></div></section></section><section class="principles"><div><h3>Limits are real</h3><p>Role, availability, overlapping duties, rest gap and workload are hard constraints.</p></div><div><h3>Uncertainty is explicit</h3><p>A search limit is not proof that a schedule is impossible. Incomplete drafts stay marked.</p></div><div><h3>A plan, not a promise</h3><p>First feasible solution, not optimized fairness. Confirm the roster with your people.</p></div></section></main><footer>Built for LaunchPad Hacks by Aditya Mittal with OpenAI Codex. <span>AI-assisted implementation · No runtime AI · MIT source</span></footer><script type="module">
+function validate(input) {
+ if (!input || !Array.isArray(input.people) || !Array.isArray(input.shifts)) throw Error('Expected people and shifts arrays.');
+ if (!input.people.length || input.people.length > 16 || !input.shifts.length || input.shifts.length > 12) throw Error('Use 1–16 volunteers and 1–12 shifts.');
+ const unique = (items, label) => { if (new Set(items.map(x=>x.id)).size !== items.length) throw Error(`Duplicate ${label} IDs.`); };
+ unique(input.people,'volunteer'); unique(input.shifts,'shift');
+ const txt = v => typeof v==='string' && v.trim().length>0 && v.length<=80;
+ let slots=0;
+ for(const s of input.shifts) {
+  if(!txt(s.id)||!txt(s.name)||!txt(s.role)||!Number.isInteger(s.start)||!Number.isInteger(s.end)||s.start<0||s.end>1440||s.start>=s.end||!Number.isInteger(s.count)||s.count<1||s.count>8) throw Error('Each shift needs a name, role, valid same-day times and 1–8 places.');
+  slots+=s.count;
+ }
+ if(slots>24) throw Error('Use at most 24 total places.');
+ for(const p of input.people) {
+  if(!txt(p.id)||!txt(p.name)||!Array.isArray(p.roles)||!p.roles.length||p.roles.some(x=>!txt(x))||!Array.isArray(p.available)||p.available.some(id=>!input.shifts.some(s=>s.id===id))||!Number.isInteger(p.maxShifts)||p.maxShifts<0||p.maxShifts>24||!Number.isInteger(p.maxMinutes)||p.maxMinutes<0||p.maxMinutes>1440) throw Error('Each volunteer needs a name, roles, valid availability and nonnegative integer limits.');
+ }
+ if(!Number.isInteger(input.restMinutes)||input.restMinutes<0||input.restMinutes>180) throw Error('Rest gap must be 0–180 minutes.');
+ return input;
+}
+const role = s => s.trim().toLowerCase();
+const time = minute => `${String(Math.floor(minute/60)).padStart(2,'0')}:${String(minute%60).padStart(2,'0')}`;
+function can(p, s, assigned, input) {
+ if(!p.roles.some(r=>role(r)===role(s.role)) || !p.available.includes(s.id)) return false;
+ const mine=assigned.filter(a=>a.personId===p.id).map(a=>input.shifts.find(s=>s.id===a.shiftId));
+ if(mine.length>=p.maxShifts||mine.reduce((n,x)=>n+x.end-x.start,0)+s.end-s.start>p.maxMinutes) return false;
+ return mine.every(x=>x.id!==s.id && (s.start>=x.end+input.restMinutes || x.start>=s.end+input.restMinutes));
+}
+function audit(input, assignments) {
+ const errors=[], ids=new Set();
+ for(const a of assignments) {
+  const s=input.shifts.find(x=>x.id===a.shiftId),p=input.people.find(x=>x.id===a.personId);
+  const key=a.shiftId+':'+a.place;
+  if(!s||!p||!Number.isInteger(a.place)||a.place<1||a.place>s.count){errors.push('Unknown volunteer, shift or place.');continue;}
+  if(ids.has(key)) errors.push('A place has multiple assignments.'); ids.add(key);
+  const prior=assignments.filter(x=>x!==a&&x.personId===a.personId&&input.shifts.some(s=>s.id===x.shiftId));
+  if(!can(p,s,prior,input))errors.push(`${p.name}: availability, role, time or workload violation.`);
+ }
+ const missing=[]; for(const s of input.shifts)for(let place=1;place<=s.count;place++)if(!ids.has(s.id+':'+place)) missing.push({shiftId:s.id,place});
+ return { valid:errors.length===0, complete:errors.length===0&&!missing.length, errors, missing };
+}
+function solve(input, budget=50000) {
+ validate(input); if(!Number.isInteger(budget)||budget<1)throw Error('Search budget must be a positive integer.');
+ const slots=input.shifts.flatMap(s=>Array.from({length:s.count},(_,i)=>({shiftId:s.id,place:i+1})));
+ let visited=0,exhausted=false,best=[],answer=null;
+ function search(todo,assigned) {
+  if(assigned.length>best.length)best=assigned.map(x=>({...x}));
+  if(!todo.length){answer=assigned.map(x=>({...x}));return true;}
+  if(visited>=budget){exhausted=true;return false;} visited++;
+  const options=todo.map(slot=>({slot,people:input.people.filter(p=>can(p,input.shifts.find(s=>s.id===slot.shiftId),assigned,input))}));
+  options.sort((a,b)=>a.people.length-b.people.length||a.slot.shiftId.localeCompare(b.slot.shiftId)||a.slot.place-b.slot.place);
+  const {slot,people}=options[0];
+  const flexibility=p=>todo.filter(t=>{const s=input.shifts.find(s=>s.id===t.shiftId);return p.available.includes(s.id)&&p.roles.some(r=>role(r)===role(s.role));}).length;
+  people.sort((a,b)=>assigned.filter(x=>x.personId===a.id).length-assigned.filter(x=>x.personId===b.id).length||flexibility(a)-flexibility(b)||a.id.localeCompare(b.id));
+  const remaining=todo.filter(s=>s!==slot);
+  for(const p of people){if(search(remaining,[...assigned,{...slot,personId:p.id}]))return true;if(exhausted)return false;}
+  return false;
+ }
+ search(slots,[]);
+ const assignments=answer||best, checked=audit(input,assignments);
+ if(!checked.valid)throw Error('Internal validation failed; no roster may be exported.');
+ const blockers=input.shifts.map(s=>({shift:s.name,eligible:input.people.filter(p=>can(p,s,[],input)).length,needed:s.count})).filter(x=>x.eligible<x.needed);
+ return {schema:'shiftweave.plan.v1',status:answer?'complete':exhausted?'search_limit':'infeasible',assignments,visited,budget,unfilled:checked.missing,blockers,notes:'First feasible roster, not an optimal fairness solution. An incomplete draft is not a maximum-coverage guarantee. Same-day times only; no calendar, legal or fatigue guidance.'};
+}
+const sample = () => ({restMinutes:15, shifts:[{id:'s1',name:'Welcome desk',role:'welcome',start:540,end:600,count:2},{id:'s2',name:'Stage setup',role:'tech',start:570,end:660,count:1},{id:'s3',name:'Welcome wrap-up',role:'welcome',start:630,end:690,count:1}],people:[{id:'p1',name:'Asha',roles:['welcome'],available:['s1','s3'],maxShifts:2,maxMinutes:150},{id:'p2',name:'Kabir',roles:['welcome','tech'],available:['s1','s2','s3'],maxShifts:2,maxMinutes:150},{id:'p3',name:'Leena',roles:['tech'],available:['s2'],maxShifts:1,maxMinutes:90},{id:'p4',name:'Rohan',roles:['welcome'],available:['s1'],maxShifts:1,maxMinutes:60}]});
+
+const $=id=>document.getElementById(id);
+let input=null,plan=null,reviewedInput=null,version=0,serial=100;
+const node=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
+function message(text,error=false){$('message').textContent=text;$('message').classList.toggle('error',error);}
+function invalidate(){plan=null;reviewedInput=null;$('result').hidden=true;$('approve').checked=false;$('export').disabled=$('print').disabled=true;message('Inputs changed. Build a new roster before approval or export.');}
+function field(label,value,type,onchange,attrs={}){const l=node('label',label),e=node('input');e.type=type;e.value=value;Object.assign(e,attrs);e.oninput=()=>{onchange(e.value);invalidate();};if(label==='Duty name')e.onchange=render;l.append(e);return l;}
+function render(){
+ $('editor').hidden=false;$('rest').value=input.restMinutes;$('shifts').replaceChildren();$('people').replaceChildren();
+ input.shifts.forEach((s,i)=>{
+  const card=node('div',undefined,'entry'),head=node('div',undefined,'entryhead');head.append(node('strong',`DUTY ${i+1}`));const remove=node('button','Remove');remove.setAttribute('aria-label',`Remove duty ${i+1}`);remove.onclick=()=>{input.shifts=input.shifts.filter(x=>x!==s);input.people.forEach(p=>p.available=p.available.filter(id=>id!==s.id));invalidate();render();};head.append(remove);card.append(head);
+  const fields=node('div',undefined,'fields');fields.append(field('Duty name',s.name,'text',v=>s.name=v,{maxLength:80}),field('Required role',s.role,'text',v=>s.role=v,{maxLength:80}),field('Start',time(s.start),'time',v=>s.start=minutes(v)),field('End',time(s.end),'time',v=>s.end=minutes(v)),field('Places',s.count,'number',v=>s.count=Number(v),{min:1,max:8}));card.append(fields);$('shifts').append(card);
+ });
+ input.people.forEach((p,i)=>{
+  const card=node('div',undefined,'entry'),head=node('div',undefined,'entryhead');head.append(node('strong',`VOLUNTEER ${i+1}`));const remove=node('button','Remove');remove.setAttribute('aria-label',`Remove volunteer ${i+1}`);remove.onclick=()=>{input.people=input.people.filter(x=>x!==p);invalidate();render();};head.append(remove);card.append(head);
+  const fields=node('div',undefined,'fields');fields.append(field('Name / initials',p.name,'text',v=>p.name=v,{maxLength:80}),field('Roles (comma-separated)',p.roles.join(', '),'text',v=>p.roles=v.split(',').map(x=>x.trim()).filter(Boolean),{maxLength:160}),field('Maximum duties',p.maxShifts,'number',v=>p.maxShifts=Number(v),{min:0,max:24}),field('Maximum minutes',p.maxMinutes,'number',v=>p.maxMinutes=Number(v),{min:0,max:1440}));card.append(fields);
+  const avail=node('fieldset',undefined,'availability');avail.append(node('legend','Available for (explicit consent required)'));
+  input.shifts.forEach(s=>{const l=node('label'),c=node('input');c.type='checkbox';c.checked=p.available.includes(s.id);c.onchange=()=>{p.available=p.available.filter(id=>id!==s.id);if(c.checked)p.available.push(s.id);invalidate();};l.append(c,document.createTextNode(` ${s.name} · ${time(s.start)}–${time(s.end)}`));avail.append(l);});card.append(avail);$('people').append(card);
+ });
+}
+function minutes(v){if(!/^\d\d:\d\d$/.test(v))return NaN;const [h,m]=v.split(':').map(Number);return h*60+m;}
+function load(next){validate(next);input=structuredClone(next);invalidate();render();message('Plan loaded locally. Set real constraints, then build a roster.');}
+function drawPlan(){
+ $('result').hidden=false;const complete=plan.status==='complete';$('outcome').className=complete?'':'warn';
+ const headline=complete?'All places covered.':plan.status==='infeasible'?'No complete roster fits these constraints.':'Search budget reached — feasibility is unresolved.';
+ const details=complete?'Every assignment passed the availability, role, overlap, rest and workload checks.':plan.blockers.map(b=>`${b.shift}: ${b.eligible} eligible for ${b.needed} places`).join('; ');
+ $('outcome').textContent=`${headline} ${plan.assignments.length} assigned, ${plan.unfilled.length} open. ${details||'No individual duty has an obvious eligibility shortage; conflicts may involve overlap, rest or combined workload.'} ${!complete?'Any visible assignments are an incomplete draft, not a maximum-coverage solution.':''}`;
+ const table=node('table'),thead=node('thead'),tr=node('tr');['Duty','Time','Role','Place','Volunteer'].forEach(x=>tr.append(node('th',x)));thead.append(tr);table.append(thead);const body=node('tbody');
+ for(const s of input.shifts)for(let place=1;place<=s.count;place++){const a=plan.assignments.find(x=>x.shiftId===s.id&&x.place===place),r=node('tr');const name=a?input.people.find(p=>p.id===a.personId).name:'OPEN';[s.name,`${time(s.start)}–${time(s.end)}`,s.role,place,name].forEach((x,i)=>r.append(node('td',String(x),!a&&i===4?'gap':undefined)));body.append(r);}table.append(body);$('schedule').replaceChildren(table);
+ $('loads').replaceChildren();input.people.forEach(p=>{const mine=plan.assignments.filter(x=>x.personId===p.id),mins=mine.reduce((n,a)=>{const s=input.shifts.find(s=>s.id===a.shiftId);return n+s.end-s.start;},0);const card=node('div',p.name,'load');card.append(node('span',`${mine.length}/${p.maxShifts} duties · ${mins}/${p.maxMinutes} min`));$('loads').append(card);});
+ $('limits').textContent=`${plan.visited.toLocaleString()} search states explored; cap ${plan.budget.toLocaleString()}. ${plan.notes} Infeasible means all complete-assignment branches were eliminated; this does not prove the partial draft covers the most places.`;
+ $('approve').checked=false;$('export').disabled=$('print').disabled=true;
+}
+$('sample').onclick=()=>{version++;load(sample());};
+$('new').onclick=()=>{version++;load({restMinutes:0,shifts:[{id:'s1',name:'New duty',role:'welcome',start:540,end:600,count:1}],people:[{id:'p1',name:'Volunteer A',roles:['welcome'],available:[],maxShifts:1,maxMinutes:60}]});};
+$('addshift').onclick=()=>{input.shifts.push({id:'s'+serial++,name:'New duty',role:'welcome',start:600,end:660,count:1});invalidate();render();};
+$('addperson').onclick=()=>{input.people.push({id:'p'+serial++,name:'New volunteer',roles:['welcome'],available:[],maxShifts:1,maxMinutes:120});invalidate();render();};
+$('rest').oninput=()=>{input.restMinutes=Number($('rest').value);invalidate();};
+$('solve').onclick=()=>{try{validate(input);plan=solve(input);reviewedInput=JSON.stringify(input);drawPlan();message('Roster checked. Inspect coverage, workload and limitations before approval.');}catch(e){invalidate();message(e.message,true);}};
+$('approve').onchange=()=>{$('export').disabled=$('print').disabled=!($('approve').checked&&plan&&reviewedInput===JSON.stringify(input));};
+function download(value,name){const url=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'}));const a=node('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+$('saveinput').onclick=()=>{try{validate(input);download(input,'shiftweave-input.json');}catch(e){message(e.message,true);}};
+$('export').onclick=()=>{if(!plan||!$('approve').checked||reviewedInput!==JSON.stringify(input))return;const check=audit(input,plan.assignments);if(!check.valid){invalidate();message('Independent roster audit failed.',true);return;}download({project:'ShiftWeave',input,plan,audit:check,warning:'This file contains volunteer names and availability. Store it appropriately. Confirm arrangements with participants; no fairness optimum claimed.'},'shiftweave-reviewed-roster.json');};
+$('print').onclick=()=>{if(plan&&$('approve').checked&&reviewedInput===JSON.stringify(input))window.print();};
+$('file').onchange=async e=>{const f=e.target.files[0];if(!f)return;const v=++version;try{if(f.size>100000)throw Error('Use a JSON file smaller than100KB.');const text=new TextDecoder('utf-8',{fatal:true}).decode(await f.arrayBuffer());if(v===version)load(JSON.parse(text));}catch(err){if(v===version)message('Import rejected: '+err.message,true);}e.target.value='';};
+
+</script></body></html>
